@@ -1,0 +1,36 @@
+
+<!-- JSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJS -->
+<!-- %= javascript_pack_tag 'homepage' % -->
+<!-- %= javascript_pack_tag 'homepage', 'data-turbolinks-track': 'reload' % -->
+<!-- script src="javascript/packs/homepage.js" %></script -->
+<!-- FIX THIS SHIT!
+<!-- JSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJSJS -->
+
+<div class='clearfix' style="width: 100%; margin-left:20px;">
+	<b>Bugs and AI</b><br>
+	<!-- <p style="margin-left:30px;"> -->
+	<div style="margin-left:20px; width:50%; float:left; ">
+		<p>Under the guise of 'Security Research', AI developments are leading to greater
+			sophistication in diverse aspects of computing. Even the humble software bug is
+			not excluded, opening up a new nefarious field for manipulations by AI-systems
+			to effectively make the bugs 'intelligent' ...<br>
+		</p><p>Does the idea of 'Bugs that think!' offend you?</p>
+		<% if Current.user %>
+			<span style="font: bold 10px Arial; color: red;">Got u'r email - get ready for SPAMBUG!</span>
+		<% else %>
+			<b><%= link_to "Do you want to know more?", sign_up_path %></b>
+		<% end %>
+	<!-- </p> -->
+	</div>
+	<div style="float: left; padding-left: 50px;">
+		<%= image_tag('chipbug.png') %>
+	</div>
+</div>
+<p></p>
+<div class='clearfix' style="width: 100%;" ">
+	<table width=100%><tr>
+		<td width=30% style="border: 1px solid red;">TODO: topics</td>
+		<td width=40% style="border: 1px solid green;">descriptions of topics on left</td>
+		<td width=30% style="border: 1px solid blue;">links & comments<br> these are just ideas for getting rails/ruby exercise...</td>
+	</tr></table>
+</div>

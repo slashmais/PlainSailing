@@ -1,0 +1,55 @@
+
+<!-- % = javascript_pack_tag 'homepage.js' % -->
+
+<div class='clearfix' style="width: 100%;">
+	<div style="float: right; font: 12px Arial;" >
+		<% if Current.user %>
+			User: <b><%= Current.user.email %></b>&nbsp;&nbsp;<%= link_to 'Edit', edit_password_path %>&nbsp;&nbsp;<%= link_to 'Logout', logout_path, method: :delete %>
+		<% else %>
+			<%= link_to 'Sign Up', sign_up_path %>&nbsp;or&nbsp;<%= link_to 'Login', sign_in_path %>
+		<% end %>
+	</div>
+</div>
+
+<div class='clearfix' style="width: 100%;">
+	<div class='logopanel'>
+		<div class='logologo'>
+			<p><%= link_to image_tag('steer_logo.png'), '/', :onclick => '/' %></p>
+		</div>
+		<div class='logotitle'>
+			<p class='logofont'>Plain Sailing<br>
+			<span class="sublogotitle">
+				Master of passionate skills to sail me through hell's<br>own jaws the second I nod the direction to steer
+			</span>
+			</p>
+		</div>
+		<div class='logomotive'>
+			<p><%= image_tag('schooner.png') %></p>
+		</div>
+	</div>
+</div>
+
+<div class='clearfix'>
+	<!-- %= link_to "test", scratch_path % -->
+	<div class="clearfix" >
+		<table width=100% ><tr>
+		<% { "Voyages" => ["ruby", "rails", "atom", "HTML5", "CSS/SASS", "Javascript", "..and more.."],
+			  "Navigation" => ["Ruby-home", "Rails-home", "Tutorials", "..and more.."],
+			  "More.." => ["..and..", "..more.."]
+		  	}.each do |m,l| %>
+<!-- TODO: change array to hash with proper links/functions, create from database, etc ... -->
+			<td>
+			<div class="dropdown" style="float: left;">
+				<button onclick='dropMenuFunc("<%= m %>")' class="dropbtn"><%= m %></button>
+				<div id="<%= m %>" class="dropdown-content" >
+					<% l.each do |e| %>
+						<a href="#<%= e %>"><%= e %></a>
+					<% end %>
+				</div>
+			</div>
+			</td>
+		<% end %>
+		</tr></table>
+	</div>
+</div>
+<hr>

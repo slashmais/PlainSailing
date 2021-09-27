@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PlainSailing</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+	<!-- %= javascript_pack_tag 'homepage', 'data-turbolinks-track': 'reload' % -->
+
+	</head>
+
+	<script>
+
+	/* TODO: put this in plainsailing.js ... */
+
+	function dropMenuFunc(id)
+	{
+		closeDD(id);
+		document.getElementById(id).classList.toggle("show");
+	}
+
+	function closeDD(id)
+	{
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++)
+		{
+			var openDropdown = dropdowns[i];
+			if (openDropdown.id != id)
+			{
+				if (openDropdown.classList.contains('show'))
+				{
+					openDropdown.classList.remove('show');
+				}
+			}
+		}
+	}
+
+	window.onclick = function(event)
+	{
+		if (!event.target.matches('.dropbtn'))
+		{
+			var dropdowns = document.getElementsByClassName("dropdown-content");
+			var i;
+			for (i = 0; i < dropdowns.length; i++)
+			{
+				var openDropdown = dropdowns[i];
+				if (openDropdown.classList.contains('show'))
+				{
+					openDropdown.classList.remove('show');
+				}
+			}
+		}
+	}
+
+	function eFunc(opt="nothing")
+	{
+		alert(opt + " - for \"fullstack\"");
+	}
+
+	</script>
+
+	<body>
+
+		<%= render 'layouts/logomenu.html.erb' %>
+
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+
+		<%= yield %>
+
+		<div style="clearfix;">
+			<p></p>
+			<footer>
+				<b>Author</b>: Marius Albertyn &nbsp;&nbsp;<b>&copy; </b>PlainSailing &nbsp;&nbsp; <b>Email: <b> <a href="mailto:plainsailing@example.com">plainsailing</a>
+			</footer>
+		</div>
+	</body>
+</html>

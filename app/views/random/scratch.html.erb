@@ -1,0 +1,25 @@
+
+
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the dropdown menu.</p>
+
+<div class="clearfix" >
+	<table><tr>
+	<% {"Aaa" => ["A-here", "A-there", "A-anywhere", "A-everywhere"],
+		"Bbb" => ["B-serious", "B-gone", "B-early", "B-late", "B-somewhere"],
+		"Ccc" => ["C-saw", "C-shells", "C-shore"]
+	}.each do |m,l| %>
+		<td>
+		<div class="dropdown" style="float: left;">
+			<button onclick='dropMenuFunc("<%= m %>")' class="dropbtn"><%= m %></button>
+			<div id="<%= m %>" class="dropdown-content" >
+				<% l.each do |e| %>
+					<a href="#<%= e %>"><%= e %></a>
+				<% end %>
+			</div>
+		</div>
+		</td>
+	<% end %>
+	</tr></table>
+</div>
